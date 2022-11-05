@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time and date</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: red;
+            background-image: linear-gradient(to bottom right, blue, red);
+        }
+
+        #Style {
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            height: 400px;
+            width: 800px;
+            border: 1px solid black;
+            background-color: pink;
+            background-image: linear-gradient(to top ,rgb(255, 0, 85),rgb(219, 192, 255));
+        }
+
+        .same {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            margin: 15px;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+            padding: 10px 15px;
+            font-size: 1.5rem;
+            font-style:italic;
+        }
+        .same1{
+            font-style:italic;
+        }
+
+        #Date {
+            background-color: pink;
+            background-image: linear-gradient(to bottom ,cyan,rgb(192, 255, 192));
+        }
+
+        #Hours {
+            background-color: pink;
+            background-image: linear-gradient(to top ,cyan,rgb(192, 255, 192));
+        }
+
+        #Minites {
+            background-color: pink;
+            background-image: linear-gradient(to bottom ,cyan,rgb(192, 255, 192));
+        }
+
+        #Seconds {
+            background-color: pink;
+            background-image: linear-gradient(to top ,cyan,rgb(192, 255, 192));
+        }
+        #Year{
+            text-align: center;
+            background-color: pink;
+            background-image: linear-gradient(to top ,cyan,rgb(192, 255, 192));
+        }
+    </style>
+</head>
+
+<body>
+        <div id="Style">
+        <div id="Year" class="same">Year:<span id="Year1" class="same1"></span></div>
+        <div id="Date" class="same">Date:<span id="Date1" class="same1"></span></div>
+        <div id="Hours" class="same">Hours:<span id="Hours1" class="same1"></span></div>
+        <div id="Minites" class="same">Minites:<span id="Minites1" class="same1"></span></div>
+        <div id="Seconds" class="same">seconds:<span id="Seconds1" class="same1"></span></div>
+        </div>
+    <script>
+        setInterval(function () {
+            let date = new Date();
+            let D = date.getDate();
+            let H = date.getHours();
+            let M = date.getMinutes();
+            let S = date.getSeconds();
+            let A = date.getFullYear();
+
+            document.getElementById('Date1').innerHTML = D;
+            document.getElementById('Hours1').innerHTML = H;
+            document.getElementById('Minites1').innerHTML = M;
+            document.getElementById('Seconds1').innerHTML = S;
+            document.getElementById('Year1').innerHTML = A;
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
